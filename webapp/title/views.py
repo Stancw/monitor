@@ -56,7 +56,7 @@ def user_login(request):
         if user:
             if user.is_active:
                 login(request,user)
-                return HttpResponseRedirect(reverse('index'))
+                return render(request, 'title/monitoring.html', {})
             else:
                 return HttpResponse("Your account was inactive.")
         else:
@@ -65,3 +65,10 @@ def user_login(request):
             return HttpResponse("Invalid login details given")
     else:
         return render(request, 'title/login.html', {})
+
+
+def monitoring(request):
+    if request.method =='GET':
+        name = request.GET.get('name')
+        url = request.GET.get('url')
+        body = request.GET.get('body')

@@ -11,7 +11,7 @@
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <ul class="nav navbar-nav">
-          <li><a class="navbar-brand" href="{% url 'index' %}">DJANGO</a></li>
+          <li><a class="navbar-brand" href="{% url 'index' %}">Monitoring Service</a></li>
           <li><a class="navbar-link" href="{% url 'title:register' %}">Register</a></li>     
 
           {% if user.is_authenticated %}
@@ -19,7 +19,7 @@
           {% else %}
             <li><a class="navbar-link" href="{% url 'title:user_login' %}">Login</a></li>
           {% endif %}
-          
+
         </ul>
       </div>
     </nav>

@@ -1,5 +1,6 @@
 from django import forms
 from title.models import UserProfileInfo
+from title.models import Monitoring
 from django.contrib.auth.models import User
 
 
@@ -14,3 +15,10 @@ class UserProfileInfoForm(forms.ModelForm):
      class Meta():
          model = UserProfileInfo
          fields = ('portfolio_site','profile_pic')
+
+    
+
+class MonitoringForm(forms.ModelForm):
+    class Meta():
+        model = Monitoring
+        fields = ('name','url','body')
